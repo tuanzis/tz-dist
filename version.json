@@ -6,7 +6,7 @@
     "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.5.0.zip",
     "pageUrl":  "https://tuanzis.github.io/tz-dist/",
     "notesUrl":  "https://tuanzis.github.io/tz-dist/更新说明.md",
-    "sha256":  "cb41f5fb264b48eee536a19dae840516bd0e8dfa262ba154542402d76add524f",
+    "sha256":  "8c39e89109b737e0e6c93754fd62f833319636ad9eda906756b30df931e7011c",
     "size":  182304,
     "notes":  [
                   "打开面板时静默检查一次是否有新版本（每天最多一次），有新版在顶部显示一条横幅：更新内容 / 下载 / 跳过此版本，不弹窗打扰。",
