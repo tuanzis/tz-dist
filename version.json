@@ -1,15 +1,15 @@
 {
     "name":  "音效轨道库",
-    "version":  "1.6.1",
+    "version":  "1.6.2",
     "releasedAt":  "2026-10-26",
     "minResolve":  "20.2.2",
-    "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.6.1.zip",
+    "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.6.2.zip",
     "pageUrl":  "https://tuanzis.github.io/tz-dist/",
     "notesUrl":  "https://tuanzis.github.io/tz-dist/更新说明.md",
-    "sha256":  "94f0741ff9eeabf5d5a791d0cb8c5b8b1369e7c5eecb63cb6c57fd584fadf530",
-    "size":  197317,
+    "sha256":  "e3dbe237d8ab47b2a756caecd340c664543c85322bbc4ff595e5a5e2c3566417",
+    "size":  198233,
     "notes":  [
-                  "一键整理音轨新增第三种方式「最少轨道」：只剩 对白 / 音效 / 音乐 三类，所有音效和氛围混在一起装箱，互不重叠的全部合并到同一条轨，轨道数最少（同一时刻有几个声音叠着，就只需要几条轨）。",
-                  "三种方式对比：按分类细分（每类各自尽量少轨）、只分三类（FX 音效 / BG 氛围 / MX 音乐）、最少轨道（音效 / 音乐）。"
+                  "一键整理音轨新增选项「舍弃未启用的音效片段」（默认勾选，三种方式都可用）：被禁用的片段直接删除，不再原地保留、也不会单独留轨；取消勾选则原地保留。只影响要整理的轨，对白 / 锁定 / 受保护轨不受影响。预览里会列出将删除的片段。",
+                  "「最少轨道」方式明确为四类：对白 / FX 音效 / BG 氛围（背景音） / MX 音乐——背景音单独一组，不并入音效轨；每组内互不重叠的片段合并，轨道最少。"
               ]
 }
