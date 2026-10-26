@@ -1,14 +1,18 @@
 {
     "name":  "音效轨道库",
-    "version":  "1.6.3",
-    "releasedAt":  "2026-10-26",
+    "version":  "1.7.0",
+    "releasedAt":  "2026-10-27",
     "minResolve":  "20.2.2",
-    "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.6.3.zip",
+    "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.7.0.zip",
     "pageUrl":  "https://tuanzis.github.io/tz-dist/",
     "notesUrl":  "https://tuanzis.github.io/tz-dist/更新说明.md",
-    "sha256":  "571b1e28a778d8f3395127a1933bf75aa1afc68f8122ca00990625db5c0945c2",
-    "size":  199277,
+    "sha256":  "e1b1fb878c0b0b1ced7c5f0635c09ced0cdb5fd4430ffd4e57c8d91c7d163334",
+    "size":  218881,
     "notes":  [
-                  "「轨道模板」页重新排版，更清爽："
+                  "「音效库」页新增 「从已交付项目抓取…」：在项目管理器里勾选一个或多个项目，插件依次打开，按时间线名字里的 集号 + 日期（如 EP35_1016 / EP35_1018）自动找出每一集的最终版，把上面用过的音效 / 氛围 / 音乐汇总去重，列成清单让你确认后入库，最后自动切回你原来的项目和时间线。",
+                  "识别规则：同一集取日期最新（也认 v3 / 第3版 / final / 定稿 等字样）；名字像“备份 / copy / 测试 / 整理前备份”的默认不抓；都可以在清单里改勾选后重新分析。",
+                  "自动跳过：对白（和画面链接的声音、对白轨）、禁用的片段、试听 / 避让轨。",
+                  "入库时：已在库的只记使用次数；新文件按文件名 / 时长自动归类（认不出的进“未分类”，可以改），默认复制到音效库文件夹；记下“在哪个项目用过几次”，排序“最常用”和“本片用过”都能用上。同名同大小的文件自动合并。",
+                  "子文件夹也能进去选；期间请不要操作达芬奇。"
               ]
 }
