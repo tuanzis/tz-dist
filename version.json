@@ -6,8 +6,8 @@
     "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.5.0.zip",
     "pageUrl":  "https://tuanzis.github.io/tz-dist/",
     "notesUrl":  "https://tuanzis.github.io/tz-dist/更新说明.md",
-    "sha256":  "11916e527ed8992126aa0e3cf2bad8d80bbdd0162c796e1d23c08b47a268a775",
-    "size":  178636,
+    "sha256":  "ce640d57b36a9fd93379e2a1f068421eff2bf2555fcc1478187103671e449704",
+    "size":  178832,
     "notes":  [
                   "打开面板时静默检查一次是否有新版本（每天最多一次），有新版在顶部显示一条横幅：更新内容 / 下载 / 跳过此版本，不弹窗打扰。",
                   "「下载」会把安装包存到「下载」文件夹并核对 SHA256，然后打开所在位置；关闭达芬奇、解压、双击 Install.bat 即完成升级。",
