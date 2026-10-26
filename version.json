@@ -1,0 +1,18 @@
+{
+    "name":  "音效轨道库",
+    "version":  "1.5.0",
+    "releasedAt":  "2026-10-26",
+    "minResolve":  "20.2.2",
+    "downloadUrl":  "https://tuanzis.github.io/tz-dist/downloads/sfx-track-library-v1.5.0.zip",
+    "pageUrl":  "https://tuanzis.github.io/tz-dist/",
+    "notesUrl":  "https://tuanzis.github.io/tz-dist/更新说明.md",
+    "sha256":  "cb41f5fb264b48eee536a19dae840516bd0e8dfa262ba154542402d76add524f",
+    "size":  182304,
+    "notes":  [
+                  "打开面板时静默检查一次是否有新版本（每天最多一次），有新版在顶部显示一条横幅：更新内容 / 下载 / 跳过此版本，不弹窗打扰。",
+                  "「下载」会把安装包存到「下载」文件夹并核对 SHA256，然后打开所在位置；关闭达芬奇、解压、双击 Install.bat 即完成升级。",
+                  "设置页新增「更新」：当前版本、自动检查开关、更新源地址（可改成自己的）、立即检查、上次检查结果。",
+                  "只请求一个 version.json，不上传任何数据；没有配置更新源的安装包不会联网。",
+                  "新增 LICENSE（MIT）、README、对外下载页（docs/）、一键生成发布包的 Make-Release.bat（自动剔除私人信息、打包、算 SHA256、生成 version.json）。"
+              ]
+}
