@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>音效轨道库 · DaVinci Resolve 音效与配乐工作台</title>
-<meta name="description" content="嵌在 DaVinci Resolve Studio 里的音效 / 配乐面板：分类音效库、按分类固定轨、最响点对齐、按标记批量放置、音乐避让对白、音效套餐、轨道模板、波形试听、氛围铺底、使用清单导出。">
+<title>音效素材管理器 · 本地索引与达芬奇轻量桥接</title>
+<meta name="description" content="独立音效素材管理器：本地 SQLite 索引、可点击拖动的波形试听、按需缓存与 DaVinci Resolve Studio 轻量桥接。">
 <style>
   :root { --bg:#f5f5f7; --card:#fff; --text:#1d1d1f; --muted:#6e6e73; --line:rgba(0,0,0,.08); --accent:#e8752f; --accent-2:#c95f1c; --ok:#1f9d61; --radius:18px; }
   @media (prefers-color-scheme: dark) { :root { --bg:#111214; --card:#1c1d21; --text:#f2f2f5; --muted:#a0a2ab; --line:rgba(255,255,255,.09); --accent:#f08a4b; --accent-2:#ffa86d; } }
@@ -48,17 +48,22 @@
 </head>
 <body>
 <header class="wrap">
-  <div class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3 10h2v4H3zm4-3h2v10H7zm4-4h2v18h-2zm4 5h2v8h-2zm4 3h2v2h-2z"/></svg>音效轨道库 · SFX Track Library</div>
-  <h1>给剪辑师的<br>音效与配乐工作台</h1>
-  <p class="sub">嵌在 DaVinci Resolve Studio 里的浮动面板：音效自动分类、按分类进固定音轨、“砰”对准切点、按标记一键批量放、配乐自动避让对白、整组音效轨跨项目复用。</p>
-  <a class="cta" id="dl" href="#install" aria-disabled="true">下载 <span id="dlVer" data-version="1.5.0">最新版</span></a>
+  <div class="logo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M3 10h2v4H3zm4-3h2v10H7zm4-4h2v18h-2zm4 5h2v8h-2zm4 3h2v2h-2z"/></svg>音效素材管理器 · SFX Asset Manager</div>
+  <h1>素材在手边<br>剪辑更专注</h1>
+  <p class="sub">独立素材管理器＋达芬奇轻量桥接。本地索引管理音效与音乐，波形点哪听哪、拖动定位；需要放入时间线时再连接达芬奇。</p>
+  <a class="cta" id="dl" href="#install" aria-disabled="true">下载 Windows 管理器 <span id="dlVer" data-version="2.0.0">v2.0.0</span></a>
   <div class="meta"><span id="dlMeta">Windows · DaVinci Resolve Studio 20.2.2+（推荐 21.1+）</span> · <span id="dlSha" title="下载后可用 PowerShell 的 Get-FileHash 核对"></span></div>
+  <p class="meta"><a id="bridgeDl" href="https://github.com/tuanzis/tz-dist/releases/download/v2.0.0/sfx-resolve-bridge-v2.0.0.zip">单独下载轻量桥接</a> · <a href="downloads/sfx-track-library-v1.7.2.zip">旧版插件 v1.7.2</a> · <a href="旧版插件使用说明.md">旧版说明</a></p>
+  <p class="meta">完整管理器包已包含桥接安装文件。Windows 便携版，解压后运行。</p>
 </header>
 
 <main class="wrap">
   <section id="features">
-    <h2>它帮你做的事</h2>
+    <h2>本地管理，按需连接</h2>
     <div class="grid">
+      <div class="card"><div class="ic">⌁</div><h3>本地索引</h3><p>分类、搜索、收藏、波形和响度保存在本机 SQLite。已有库只读导入，原音频留在原位。</p></div>
+      <div class="card"><div class="ic">↔</div><h3>可交互波形</h3><p>点击任意位置开始试听，再点同一位置暂停／继续。拖动播放头定位，暂停保留进度，音效和音乐都支持。</p></div>
+      <div class="card"><div class="ic">◌</div><h3>按需执行</h3><p>桥接闲置不扫描素材、不轮询时间线、不分析音频。列表最多显示 50 条，分析由用户主动触发。</p></div>
       <div class="card"><div class="ic">◆</div><h3>放得准</h3><p>开头 / 最响点 / 结尾三种对齐，打击、转场默认“最响的那一下”对准播放头，上升音默认收在切点。</p></div>
       <div class="card"><div class="ic">≡</div><h3>轨道不乱</h3><p>按分类进固定音轨：转场进「FX 转场」、打击进「FX 打击」、音乐进「MX 音乐」；位置被占自动用下一条同名轨。</p></div>
       <div class="card"><div class="ic">⟲</div><h3>一键批量</h3><p>按时间线标记或画面切点批量放置，多个候选轮流用、相邻不重复，顺手把响度调齐。</p></div>
@@ -69,31 +74,20 @@
       <div class="card"><div class="ic">◎</div><h3>时间线试听</h3><p>候选放到「试听」轨，<kbd>↑</kbd><kbd>↓</kbd> 换着听，<kbd>Enter</kbd> 正式放置。</p></div>
       <div class="card"><div class="ic">▦</div><h3>氛围铺底</h3><p>一个环境声循环铺满一段范围，接缝交叉淡化，两轨交替，听不出循环。</p></div>
       <div class="card"><div class="ic">☰</div><h3>交付清单</h3><p>一键导出音乐 / 音频使用清单（CSV）：入出点、时长、来源、授权，过审交片直接用。</p></div>
-      <div class="card"><div class="ic">◐</div><h3>响度标准化</h3><p>后台测 LUFS 与真峰值，放入时按目标响度自动补增益、防削波；按平台一键切换目标。</p></div>
-      <div class="card"><div class="ic">⌂</div><h3>库是你的</h3><p>音效库就是一个普通文件夹，放网盘 / NAS 多机共用；导出、合并、健康检查；深色 / 浅色主题。</p></div>
-    </div>
-  </section>
-
-  <section id="shots">
-    <h2>界面</h2>
-    <div class="shots">
-      <figure><img src="img/sounds-dark.png" alt="音效库（深色）" loading="lazy"><figcaption>音效库：分类、波形、固定轨与对齐方式</figcaption></figure>
-      <figure><img src="img/sounds-light.png" alt="音效库（浅色）" loading="lazy"><figcaption>浅色主题</figcaption></figure>
-      <figure><img src="img/templates.png" alt="轨道模板" loading="lazy"><figcaption>轨道模板：多选音轨合存，一键跨项目应用</figcaption></figure>
-      <figure><img src="img/batch.png" alt="按标记批量放置" loading="lazy"><figcaption>按标记 / 切点批量放置</figcaption></figure>
-      <figure><img src="img/duck.png" alt="音乐避让对白" loading="lazy"><figcaption>音乐避让对白</figcaption></figure>
-      <figure><img src="img/stacks.png" alt="音效套餐" loading="lazy"><figcaption>音效套餐</figcaption></figure>
+      <div class="card"><div class="ic">◐</div><h3>响度标准化</h3><p>按需测 LUFS 与真峰值，放入时按目标响度自动补增益、防削波；按平台一键切换目标。</p></div>
+      <div class="card"><div class="ic">⌂</div><h3>库是你的</h3><p>原音频可放本机或 NAS，分类与搜索使用本地索引；支持导出、合并、健康检查和深浅主题。</p></div>
     </div>
   </section>
 
   <section id="install">
-    <h2>安装</h2>
+    <h2>开始使用</h2>
     <ol class="steps">
-      <li>确认是 <b>Windows 版 DaVinci Resolve Studio</b>（官网下载版，20.2.2 以上，推荐 21.1+）。免费版和 Mac App Store 版没有“工作流集成”菜单。</li>
-      <li>下载 zip 并解压，<b>关闭达芬奇</b>，双击 <code>Install.bat</code>，在管理员权限提示里点“是”。若弹出 SmartScreen 蓝框，点“更多信息 → 仍要运行”。</li>
-      <li>打开达芬奇：菜单 <b>工作区 › 工作流集成 › 音效轨道库</b>。面板是置顶浮窗，拖到屏幕一侧一直开着用。</li>
-      <li>升级：解压新版再运行一次 <code>Install.bat</code>，音效库和设置都会保留。升级达芬奇后也请重新运行一次。</li>
+      <li>下载完整 Windows 管理器 ZIP 并解压，保留旁边的 resources、DLL 等文件，运行 <code>SfxAssetManager.exe</code>，无需安装 Node.js。</li>
+      <li>浏览、搜索和整理素材可独立使用。首次读取旧库索引；没有旧库时可自行添加音频或关联素材库。</li>
+      <li>需要连接达芬奇时，运行包内 <code>安装达芬奇桥接.bat</code>。使用 Windows 版 DaVinci Resolve Studio 20.2.2+，推荐 21.1+；安装时按系统提示授权。</li>
+      <li>在达芬奇打开 <b>工作区 → 工作流集成（流程整合）→ 素材管理器桥接</b>，回到管理器点“连接／刷新”。旧插件和旧库保留。</li>
     </ol>
+    <p class="meta">工程引用副本存放在本机 project-media 目录，不参与试听缓存自动清理。备份与迁移工程时请同时保留媒体。</p>
   </section>
 
   <section id="changelog">
@@ -101,22 +95,23 @@
     <div class="notes">
       <div><b id="relTitle">更新要点</b></div>
       <ul id="relNotes"><li>正在读取…</li></ul>
-      <p style="margin:12px 0 0;font-size:14px"><a href="更新说明.md">完整更新说明</a> · <a href="使用说明.md">使用说明</a></p>
+      <p style="margin:12px 0 0;font-size:14px"><a href="更新说明.md">完整更新说明</a> · <a href="使用说明.md">使用说明</a> · <a href="实机测试报告.md">测试报告与性能边界</a></p>
     </div>
   </section>
 
   <section id="faq" class="faq">
     <h2>常见问题</h2>
     <details><summary>它会联网吗？收集数据吗？</summary><p>只有“检查更新”会请求一个 <code>version.json</code>（可在设置里关闭），不上传任何数据。音效库完全在你本机或你指定的网盘 / NAS 文件夹里。</p></details>
-    <details><summary>面板能嵌进达芬奇界面吗？</summary><p>不能，达芬奇不允许第三方插件嵌入，只能是浮动窗口；面板默认置顶并记住位置。</p></details>
-    <details><summary>音效 / 音乐文件存在哪里？</summary><p>默认“文档\达芬奇音效库”，可以在设置里换成任何文件夹。添加的音效复制到 <code>sounds\分类\</code>，音乐复制到 <code>music\分类\</code>。</p></details>
+    <details><summary>与旧版插件有什么区别？</summary><p>管理器独立运行，索引和音频分析在管理器内完成；达芬奇中的桥接仅执行明确操作。切换项目后手动刷新，原库新增素材后手动同步。旧插件 v1.7.2 保留为回退入口。</p></details>
+    <details><summary>音效／音乐和本地数据存在哪里？</summary><p>原音频保持原位，本地索引和缓存默认位于 %LOCALAPPDATA%\SfxAssetManager。试听缓存默认 2GiB，交给达芬奇的长期 project-media 副本单独保留。原素材离线时，已缓存的音频仍可使用。</p></details>
     <details><summary>对白避让是自动化曲线吗？</summary><p>不是。达芬奇脚本接口不能写音量关键帧，插件用“切段 + 避让轨 + 交叉淡化”的方式实现，效果等价；建议配乐定稿后再做。</p></details>
-    <details><summary>支持 Mac 吗？</summary><p>目前只提供 Windows 安装脚本；插件本体是 Electron，理论上可在 macOS Studio 版运行，但没有测试。</p></details>
+    <details><summary>支持 Mac 或达芬奇免费版吗？</summary><p>当前发布 Windows x64 便携包。连接达芬奇需要 Studio 的工作流集成接口；Mac、达芬奇免费版和多小时重型工程不在本次验收范围。</p></details>
+    <details><summary>完全不占资源吗？</summary><p>仍会占用内存、CPU 和磁盘。短时测试未发现明显播放退化，但不能承诺所有工程零影响。批量分析、导出和复制建议在暂停播放时执行，详见测试报告。</p></details>
   </section>
 </main>
 
 <footer class="wrap">
-  <div>本插件与 Blackmagic Design 无关，DaVinci Resolve 是 Blackmagic Design 的商标。安装包内附许可证。</div>
+  <div>本项目与 Blackmagic Design 无关，DaVinci Resolve 是 Blackmagic Design 的商标。安装包内附许可证。</div>
 </footer>
 
 <script>
@@ -124,12 +119,13 @@
   const $ = (s) => document.querySelector(s);
   const dl = $('#dl'), ver = $('#dlVer');
   try {
-    const r = await fetch('version.json', { cache: 'no-store' });
+    const r = await fetch('manager-version.json', { cache: 'no-store' });
     if (!r.ok) throw new Error(r.status);
     const v = await r.json();
     ver.textContent = 'v' + v.version;
     if (v.downloadUrl) { dl.href = v.downloadUrl; dl.removeAttribute('aria-disabled'); }
-    const kb = v.size ? ' · ' + Math.round(v.size / 1024) + ' KB' : '';
+    const kb = v.size ? ' · ' + (v.size / 1024 / 1024).toFixed(1) + ' MiB' : '';
+    if (v.bridgeDownloadUrl) $('#bridgeDl').href = v.bridgeDownloadUrl;
     $('#dlMeta').textContent = 'Windows · DaVinci Resolve Studio ' + (v.minResolve || '20.2.2') + '+（推荐 21.1+）' + kb;
     if (v.sha256) $('#dlSha').textContent = 'SHA256 ' + v.sha256.slice(0, 12) + '…';
     $('#relDate').textContent = v.releasedAt || '';
@@ -139,7 +135,7 @@
     if (!(v.notes || []).length) ul.innerHTML = '<li>见完整更新说明</li>';
   } catch (e) {
     ver.textContent = 'v' + ver.dataset.version;
-    dl.href = 'downloads/'; dl.removeAttribute('aria-disabled');
+    dl.href = 'https://github.com/tuanzis/tz-dist/releases/tag/v2.0.0'; dl.removeAttribute('aria-disabled');
     $('#relNotes').innerHTML = '<li>请查看下方的完整更新说明</li>';
   }
 })();

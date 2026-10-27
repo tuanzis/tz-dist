@@ -1,0 +1,24 @@
+{
+  "name": "音效素材管理器",
+  "product": "sfx-asset-manager",
+  "version": "2.0.0",
+  "bridgeVersion": "2.0.0",
+  "releasedAt": "2026-10-28",
+  "minResolve": "20.2.2",
+  "downloadUrl": "https://github.com/tuanzis/tz-dist/releases/download/v2.0.0/sfx-asset-manager-v2.0.0-win-x64.zip",
+  "bridgeDownloadUrl": "https://github.com/tuanzis/tz-dist/releases/download/v2.0.0/sfx-resolve-bridge-v2.0.0.zip",
+  "pageUrl": "https://tuanzis.github.io/tz-dist/",
+  "notesUrl": "https://tuanzis.github.io/tz-dist/更新说明.md",
+  "sha256": "338b1a86a737fede9d68bbcb9bd3c755b4a87ca8e70c6fe7c68b1ff8adbe566e",
+  "size": 158471176,
+  "bridgeSha256": "cc46de0bfd58f46a82891b2e01dd5b621f15a1f234ec94401b54b81ee10ba868",
+  "bridgeSize": 70303,
+  "notes": [
+    "独立 Windows 程序加轻量达芬奇桥接；分类、搜索、收藏、波形和响度索引保存在本地 SQLite，旧库只读导入。",
+    "桥接仅在明确操作时访问达芬奇，闲置不扫描素材、不轮询时间线；浏览列表不自动分析音频。",
+    "波形点击任意位置即可试听，再点同一位置暂停／继续；支持拖动播放头和键盘微调，暂停保留进度。音效和音乐均适用。",
+    "试听缓存按需准备，交给达芬奇的长期本地副本单独保留，不参与试听缓存自动淘汰。",
+    "保留旧插件回退入口，管理器与旧插件使用独立下载通道；解压后运行 SfxAssetManager.exe，桥接通过包内安装脚本安装。",
+    "已通过真实音频交互、离线缓存和基础 Resolve 实机操作验证；复杂工程和多小时稳定性仍需另测，不承诺绝对零资源开销。"
+  ]
+}
