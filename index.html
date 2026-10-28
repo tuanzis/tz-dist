@@ -58,6 +58,14 @@
 </header>
 
 <main class="wrap">
+  <section id="native-preview">
+    <h2>Windows 原生版 <span class="pill">0.1.0 预览</span></h2>
+    <div class="notes">
+      <p>C# / WPF 独立程序，使用本地 SQLite 分页，减少管理器固定开销。支持日常查找、收藏、导入和波形定位试听；高级功能仍使用 2.0。首次只读复制索引，原生修改独立保存。</p>
+      <p><a id="nativeDl" href="https://github.com/tuanzis/tz-dist/releases/tag/native-v0.1.0">下载原生预览版</a> · <a href="原生版使用说明.md">功能与使用说明</a> · <a href="原生版测试报告.md">性能数据与验收边界</a></p>
+      <p class="meta">包含 .NET 运行时，无需另装。0.1.0 尚未完成真实时间线放置验收和完整功能迁移；2.0 继续作为稳定默认下载。</p>
+    </div>
+  </section>
   <section id="features">
     <h2>本地管理，按需连接</h2>
     <div class="grid">
@@ -115,6 +123,14 @@
 </footer>
 
 <script>
+(async () => {
+  try {
+    const response = await fetch('native-version.json', { cache: 'no-store' });
+    if (!response.ok) return;
+    const metadata = await response.json();
+    if (metadata.downloadUrl) document.querySelector('#nativeDl').href = metadata.downloadUrl;
+  } catch (_) { /* 保留预发布页面回退入口。 */ }
+})();
 (async () => {
   const $ = (s) => document.querySelector(s);
   const dl = $('#dl'), ver = $('#dlVer');
