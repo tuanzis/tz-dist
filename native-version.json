@@ -7,7 +7,6 @@
   "recommendedStableVersion": "2.0.0",
   "releasedAt": "2026-10-28",
   "minResolve": "20.2.2",
-  "downloadUrl": "https://github.com/tuanzis/tz-dist/releases/download/native-v0.1.0/sfx-native-manager-v0.1.0-win-x64.zip",
   "pageUrl": "https://tuanzis.github.io/tz-dist/#native-preview",
   "notesUrl": "https://tuanzis.github.io/tz-dist/原生版使用说明.md",
   "testReportUrl": "https://tuanzis.github.io/tz-dist/原生版测试报告.md",
@@ -19,5 +18,10 @@
     "支持日常查找、分类、收藏、音频导入及波形定位试听；高级功能继续使用 2.0。",
     "只读复制稳定版索引，原生修改独立保存；支持既有 2.0 轻量桥接。",
     "已通过 10,001 条模拟音效、WAV/MP3 与管道协议测试；本轮未验收真实时间线写入。"
-  ]
+  ],
+  "status": "withdrawn",
+  "recommended": false,
+  "archiveUrl": "https://github.com/tuanzis/tz-dist/releases/download/native-v0.1.0/sfx-native-manager-v0.1.0-win-x64.zip",
+  "replacementUrl": "https://github.com/tuanzis/tz-dist/releases/download/v2.0.0/sfx-asset-manager-v2.0.0-win-x64.zip",
+  "withdrawalReason": "界面、完整功能和操作方式未达到 2.0 兼容迁移要求。继续使用 2.0，原生版重新迁移并验收。"
 }
